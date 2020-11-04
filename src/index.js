@@ -6,24 +6,14 @@ import HomePage from "./pages/homePage";
 import MoviePage from './pages/movieDetailsPage'
 import FavoriteMoviesPage from './pages/favoritesMoviesPage'
 import MovieReviewPage from "./pages/movieReviewPage";
+import SiteHeader from './components/siteHeader'
 
 const App = () => {
   return (
     <BrowserRouter>
-    <div className="jumbotron">
-      <div className="container-fluid">
-        <ul className="navbar-nav text-black">
-          <li className="nav-item">
-            <Link className="nav-link " to="/">
-              Home
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link " to="/movies/favorites">
-              Favorites
-            </Link>
-          </li>
-        </ul>
+      <div className="jumbotron">
+          <SiteHeader />
+          <div className="container-fluid">
         <Switch>
           <Route path="/reviews/:id" component={MovieReviewPage} />
           <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
